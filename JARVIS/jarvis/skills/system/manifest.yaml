@@ -1,0 +1,17 @@
+name: system
+description: Read-only status and time utilities.
+permission: observe
+module: jarvis.skills.system.skill
+class_name: SystemSkill
+intents:
+  status: status
+  time: time
+tools:
+  - name: status
+    description: Report assistant runtime status.
+    risk: low
+    required_tier: observe
+  - name: time
+    description: Return local machine date and time.
+    risk: low
+    required_tier: observe

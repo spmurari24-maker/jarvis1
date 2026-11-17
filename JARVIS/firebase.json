@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "firebase_public",
+    "predeploy": ["node scripts/build_firebase.mjs"],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      { "source": "/health", "run": { "serviceId": "jarvis-api", "region": "asia-south1" } },
+      { "source": "/v1/**", "run": { "serviceId": "jarvis-api", "region": "asia-south1" } },
+      { "source": "/docs", "run": { "serviceId": "jarvis-api", "region": "asia-south1" } },
+      { "source": "/openapi.json", "run": { "serviceId": "jarvis-api", "region": "asia-south1" } }
+    ]
+  }
+}

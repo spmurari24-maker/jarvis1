@@ -1,0 +1,27 @@
+name: demo
+description: Safe example skill for exercising the orchestrator.
+permission: act-autonomously
+module: jarvis.skills.demo.skill
+class_name: DemoSkill
+intents:
+  hello: greet
+  greet: greet
+  echo: echo
+tools:
+  - name: greet
+    description: Return a brief JARVIS greeting.
+    risk: low
+    required_tier: suggest
+  - name: echo
+    description: Echo supplied text for diagnostics.
+    risk: low
+    required_tier: suggest
+  - name: publish_event
+    description: Publish a small demonstration event on the local event bus.
+    risk: low
+    required_tier: suggest
+  - name: demo_critical_action
+    description: Demonstration only; never touches external systems.
+    risk: critical
+    required_tier: act-with-approval
+    critical_action: true

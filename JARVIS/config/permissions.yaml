@@ -1,0 +1,6 @@
+# Skill permission ceilings. A skill cannot elevate its manifest at runtime.
+skills:
+  demo:
+    tier: act-autonomously
+  system:
+    tier: observe
